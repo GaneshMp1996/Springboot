@@ -22,6 +22,19 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
+    @PostMapping("/create")
+    public ResponseEntity<Order> createOrder(
+            @RequestBody Order order,
+            @RequestHeader("Idempotency-Key") String idempotencyKey) {
+
+        order.setIdempotencyKey(idempotencyKey);
+
+        Order savedOrder = orderService.createOrder(order);
+        logger.info("Order created successfully with Idempotency-Key={} and ID={}", idempotencyKey, savedOrder.getId());
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(savedOrder);
+    }
+
     @GetMapping("/getorderbyid/{id}")
     public ResponseEntity<Order> getOrderById(@PathVariable("id") Long id) {
         Order order = orderService.getOrderById(id)

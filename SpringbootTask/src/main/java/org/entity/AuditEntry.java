@@ -8,7 +8,7 @@ public class AuditEntry {
     private Long id;
 
 
-    private String actor; // username or system
+    private String actor;
     private String action;
     private String details;
     private Instant createdAt;

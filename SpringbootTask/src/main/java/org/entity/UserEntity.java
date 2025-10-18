@@ -19,8 +19,7 @@ public class UserEntity {
 
 
     @Column(nullable = false)
-    private String passwordHash; // store a bcrypt hash in real app
-
+    private String passwordHash; 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<AddressEntity> addresses = new ArrayList<>();

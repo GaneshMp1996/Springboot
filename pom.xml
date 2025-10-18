@@ -11,7 +11,8 @@
 	<groupId>com.project</groupId>
 	<artifactId>kafka-event-flow</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kafka-event-flow</name>
+    <packaging>pom</packaging>
+    <name>kafka-event-flow</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
@@ -20,7 +21,10 @@
 	<developers>
 		<developer/>
 	</developers>
-	<scm>
+    <modules>
+        <module>SpringbootTask</module>
+    </modules>
+    <scm>
 		<connection/>
 		<developerConnection/>
 		<tag/>

@@ -16,7 +16,7 @@ public class UserDto {
 
 
     @Size(min = 6, message = "password must be at least 6 chars")
-    private String password; // only for create/update API; service will hash
+    private String password; 
 
 
     private Set<String> roles;
